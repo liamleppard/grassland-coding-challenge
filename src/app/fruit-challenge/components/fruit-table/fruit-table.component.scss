@@ -1,3 +1,7 @@
+$color-row-odd: #FFFFFF;
+$color-row-even: #FAFAFA;
+$color-highlight-row: #31BF5D;
+
 .container {
   min-height: 100%;
   min-width: 100%;
@@ -18,4 +22,24 @@
 
 .filter {
   flex: 1;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.highlight-row {
+  background-color: $color-highlight-row;
+}
+
+::ng-deep .mat-row:nth-child(odd) {
+  background-color: $color-row-odd;
+}
+
+::ng-deep .mat-row:nth-child(even) {
+  background-color: $color-row-even;
 }
