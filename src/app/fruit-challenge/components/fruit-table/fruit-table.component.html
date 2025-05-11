@@ -6,7 +6,24 @@
                     <mat-card-title>Grassland Ventures Fruit Database:</mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
-                    <table class="mat-table" mat-table [dataSource]="viewModel.fruitData$">
+                    <div class="filter-container">
+                        <mat-form-field class="filter" appearance="outline">
+                            <mat-label>Filter Fruits</mat-label>
+                            <input matInput (input)="onFilterChange($event.target.value)" placeholder="Search by name, genus, family, or order" />
+                        </mat-form-field>
+                        
+                        <mat-form-field appearance="outline">
+                            <mat-label>Sort By</mat-label>
+                            <mat-select (selectionChange)="onSortChange($event.value)">
+                                <mat-option value="nameAsc">Name Ascending</mat-option>
+                                <mat-option value="nameDesc">Name Descending</mat-option>
+                                <mat-option value="carbsAsc">Carbohydrates Ascending</mat-option>
+                                <mat-option value="carbsDesc">Carbohydrates Descending</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        </div>
+
+                    <table class="mat-table" mat-table [dataSource]="filteredAndSortedFruits$ | async">
                         <mat-text-column name="name"></mat-text-column>
                         <mat-text-column name="id"></mat-text-column>
                         <mat-text-column name="genus"></mat-text-column>
