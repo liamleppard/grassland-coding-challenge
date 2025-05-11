@@ -18,6 +18,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatListModule } from '@angular/material/list';
+import { FruitDetailDialogComponent } from './fruit-challenge/components/fruit-detail-dialog/fruit-detail-dialog.component';
 
 const routes: Routes = [
   {
@@ -38,6 +41,7 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: [
     FruitTableComponent,
+    FruitDetailDialogComponent
   ], 
   imports: [
     RouterModule.forRoot(routes),
@@ -50,6 +54,8 @@ const routes: Routes = [
     MatInputModule,
     MatSelectModule,
     MatOptionModule,
+    MatDialogModule,
+    MatListModule,
     MatProgressSpinnerModule,
     MatIconModule,
     MatToolbarModule,

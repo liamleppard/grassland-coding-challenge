@@ -15,6 +15,7 @@
                         <mat-form-field appearance="outline">
                             <mat-label>Sort By</mat-label>
                             <mat-select (selectionChange)="onSortChange($event.value)">
+                                <mat-option value=""></mat-option>
                                 <mat-option value="nameAsc">Name Ascending</mat-option>
                                 <mat-option value="nameDesc">Name Descending</mat-option>
                                 <mat-option value="carbsAsc">Carbohydrates Ascending</mat-option>
@@ -42,7 +43,9 @@
                             <td mat-cell class="text-right" *matCellDef="let fruit"> {{fruit.nutritions.sugar}} </td>
                         </ng-container>
                         <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-                        <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"
+                        <tr mat-row
+                            *matRowDef="let row; columns: columnsToDisplay;"
+                            (click)="openDialog(row)"
                             [ngClass]="{ 'highlight-row': row.nutritions.calories <= 50 && row.nutritions.sugar >= 8 }">
                         </tr>
                     </table>

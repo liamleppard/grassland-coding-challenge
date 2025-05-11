@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FruitTableViewModel} from './fruit-table-view-model';
 import { BehaviorSubject, combineLatest, map } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { Fruit } from '../../models/fruit';
+import { FruitDetailDialogComponent } from '../fruit-detail-dialog/fruit-detail-dialog.component';
 
 @Component({
     selector: 'app-fruit-table',
@@ -43,11 +46,16 @@ export class FruitTableComponent implements OnInit {
     })
   );
 
-  constructor(public viewModel: FruitTableViewModel) {
-
+  constructor(public viewModel: FruitTableViewModel, private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
+  }
+
+  openDialog(fruit: Fruit): void {
+    this.dialog.open(FruitDetailDialogComponent, {
+      data: fruit,
+    });
   }
 
   onFilterChange(value: string) {

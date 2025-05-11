@@ -1,6 +1,7 @@
 $color-row-odd: #FFFFFF;
 $color-row-even: #FAFAFA;
 $color-highlight-row: #31BF5D;
+$color-hover-row: #e0e0e0;
 
 .container {
   min-height: 100%;
@@ -42,4 +43,9 @@ $color-highlight-row: #31BF5D;
 
 ::ng-deep .mat-row:nth-child(even) {
   background-color: $color-row-even;
+}
+
+::ng-deep .mat-mdc-row:hover {
+  background-color: $color-hover-row;
+  cursor: pointer !important;
 }
