@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -30,28 +30,22 @@ const routes: Routes = [
   },
 ];
 
-@NgModule({
-  imports: [
-    RouterModule.forRoot(routes),
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    MatProgressSpinnerModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatButtonModule,
-    RouterModule,
-    MatMenuModule,
-    MatCardModule,
-    MatDividerModule
-  ],
-  exports: [RouterModule],
-  declarations: [
-    FruitTableComponent,
-  ]
-})
+@NgModule({ exports: [RouterModule],
+    declarations: [
+        FruitTableComponent,
+    ], imports: [RouterModule.forRoot(routes),
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatTableModule,
+        MatProgressSpinnerModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatButtonModule,
+        RouterModule,
+        MatMenuModule,
+        MatCardModule,
+        MatDividerModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppRoutingModule {
 }
