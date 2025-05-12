@@ -16,8 +16,8 @@ export class MessagingComponent {
     constructor(private messagingService: MessagingService) { }
 
     ngOnInit(): void {
-        this.messagingService.messages$.subscribe((msgs) => {
-            this.messages = msgs;
+        this.messagingService.messages$.subscribe((msg) => {
+            this.messages.push(msg);
         });
     }
 

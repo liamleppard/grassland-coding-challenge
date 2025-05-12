@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { concatMap, delay, from, Observable, of } from 'rxjs';
 import { TextMessage } from '../models/text-message';
 import { ImageMessage } from '../models/image-message';
+import { Message } from '../models/message';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessagingService {
 
-  public readonly messages$ = of([
+  public readonly messageList = [
     new TextMessage('Anna', 'assets/person2.png', 'Hello!'),
     new TextMessage('Bob', 'assets/person1.jpeg' ,'Hi!'),
     new TextMessage('Anna', 'assets/person2.png', 'How have you been?'),
@@ -22,6 +23,15 @@ export class MessagingService {
     ),
     new TextMessage('Bob', 'assets/person1.jpeg' ,'Wow! That\'s exciting! I can\'t wait to see what he looks like'),
     new ImageMessage('Anna', 'assets/person2.png', 'assets/dog.jpeg')
-  ])
+  ]
 
+  public readonly messages$: Observable<Message> = from(this.messageList).pipe(
+    concatMap(message =>
+      of(message).pipe(delay(this.getRandomDelay()))
+    )
+  );
+
+  private getRandomDelay(): number {
+    return Math.floor(Math.random() * 4000) + 1000;
+  }
 }
