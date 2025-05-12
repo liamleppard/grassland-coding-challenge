@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {of} from 'rxjs';
-import {TextMessage} from '../models/text-message';
-import {ImageMessage} from '../models/image-message';
+import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
+import { TextMessage } from '../models/text-message';
+import { ImageMessage } from '../models/image-message';
 
 @Injectable({
   providedIn: 'root'

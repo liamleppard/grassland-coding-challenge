@@ -1,9 +1,7 @@
 <div class="container">
   <div class="fake-phone">
     @for (message of messages; track message) {
-      <div>
-        {{ message | json }}
-      </div>
+      <app-text-message [message]="message"></app-text-message>
     }
   </div>
 </div>

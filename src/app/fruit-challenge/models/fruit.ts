@@ -1,4 +1,4 @@
-import {NutritionInfo} from './nutrition-info';
+import { NutritionInfo } from './nutrition-info';
 
 export interface Fruit {
   genus: string;

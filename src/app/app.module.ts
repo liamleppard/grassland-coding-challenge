@@ -15,11 +15,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { MessagingComponent } from './messaging-challenge/components/messaging/messaging.component';
 import { MatCardModule } from '@angular/material/card';
+import { TextMessageComponent } from './messaging-challenge/components/text-message/text-message.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        MessagingComponent
+        MessagingComponent,
+        TextMessageComponent
     ],
     bootstrap: [AppComponent], 
     imports: [

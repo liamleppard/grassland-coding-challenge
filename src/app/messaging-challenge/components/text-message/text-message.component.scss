@@ -1,0 +1,44 @@
+.message-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.profile-pic {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 8px;
+  align-self: end;
+}
+
+.text-bubble {
+  padding: 4px;
+  border-radius: 8px;
+  // Decided on using light text for the messages despite the original design
+  // due to wcag contrast issues.
+  color: white;
+  text-align: start;
+}
+
+.from-anna {
+  flex-direction: row-reverse;
+  text-align: right;
+
+  .profile-pic {
+    margin-right: 0;
+    margin-left: 8px;
+  }
+
+  .text-bubble {
+    background-color: #4267b2;
+  }
+}
+
+.from-others {
+  .text-bubble {
+    background-color: #8d8e91;
+  }
+}
+

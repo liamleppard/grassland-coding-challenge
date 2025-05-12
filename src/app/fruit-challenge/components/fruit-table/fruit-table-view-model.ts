@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {FruityViceService} from '../../services/fruity-vice-service';
-import {BehaviorSubject} from 'rxjs';
-import {Fruit} from '../../models/fruit';
+import { Injectable } from '@angular/core';
+import { FruityViceService } from '../../services/fruity-vice-service';
+import { BehaviorSubject } from 'rxjs';
+import { Fruit } from '../../models/fruit';
 
 @Injectable()
 export class FruitTableViewModel {

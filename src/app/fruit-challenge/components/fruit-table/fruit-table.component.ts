@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FruitTableViewModel} from './fruit-table-view-model';
+import { FruitTableViewModel } from './fruit-table-view-model';
 import { BehaviorSubject, combineLatest, map } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { Fruit } from '../../models/fruit';
