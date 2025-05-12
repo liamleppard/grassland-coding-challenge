@@ -4,7 +4,7 @@
       @if (isTextMessage(message)) {
         <app-text-message [message]="message"></app-text-message>
       } @else if(isImageMessage(message)) {
-        <!-- <app-image-message [message]="message" /> -->
+        <app-image-message [message]="message" />
       }
     }
   </div>
