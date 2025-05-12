@@ -1,3 +1,6 @@
+$text-bubble-background: #4267b2;
+$other-text-bubble-background: #8d8e91;
+
 .message-container {
   display: flex;
   align-items: flex-start;
@@ -32,13 +35,13 @@
   }
 
   .text-bubble {
-    background-color: #4267b2;
+    background-color: $text-bubble-background;
   }
 }
 
 .from-others {
   .text-bubble {
-    background-color: #8d8e91;
+    background-color: $other-text-bubble-background;
   }
 }
 

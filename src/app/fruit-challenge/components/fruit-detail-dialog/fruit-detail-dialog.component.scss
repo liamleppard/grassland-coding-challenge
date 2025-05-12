@@ -1,3 +1,5 @@
+$fruit-name: #3f51b5;
+
 .dialog-container {
   width: 400px;
   padding: 1rem;
@@ -6,7 +8,7 @@
 .fruit-name {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #3f51b5;
+  color: $fruit-name;
 }
 
 .section {
