@@ -21,7 +21,7 @@ import { TextMessageComponent } from './messaging-challenge/components/text-mess
     declarations: [
         AppComponent,
         MessagingComponent,
-        TextMessageComponent
+        TextMessageComponent,
     ],
     bootstrap: [AppComponent], 
     imports: [

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MessagingService } from '../../services/messaging.service';
 import { Message } from '../../models/message';
+import { ImageMessage } from '../../models/image-message';
+import { TextMessage } from '../../models/text-message';
 
 @Component({
     selector: 'app-messaging',
@@ -17,5 +19,13 @@ export class MessagingComponent {
         this.messagingService.messages$.subscribe((msgs) => {
             this.messages = msgs;
         });
+    }
+
+    isTextMessage(message: Message): message is TextMessage {
+        return message instanceof TextMessage;
+    }
+    
+    isImageMessage(message: Message): message is ImageMessage {
+        return message instanceof ImageMessage;
     }
 }
