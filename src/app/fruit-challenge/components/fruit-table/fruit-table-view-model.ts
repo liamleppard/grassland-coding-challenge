@@ -5,7 +5,6 @@ import { Fruit } from '../../models/fruit';
 
 @Injectable()
 export class FruitTableViewModel {
-  allFruits: Fruit[] = [];
   fruitData$ = new BehaviorSubject<Fruit[]>([]);
   loadingFruit$ = new BehaviorSubject<boolean>(false);
 
