@@ -11,21 +11,21 @@ import { TextMessage } from '../../models/text-message';
     standalone: false
 })
 export class MessagingComponent {
-    public messages: Message[] = [];
+  public messages: Message[] = [];
 
-    constructor(private messagingService: MessagingService) { }
+  constructor(private messagingService: MessagingService) { }
 
-    ngOnInit(): void {
-        this.messagingService.messages$.subscribe((msg) => {
-            this.messages.push(msg);
-        });
-    }
+  ngOnInit(): void {
+    this.messagingService.messages$.subscribe((msg) => {
+      this.messages.push(msg);
+    });
+  }
 
-    isTextMessage(message: Message): message is TextMessage {
-        return message instanceof TextMessage;
-    }
+  isTextMessage(message: Message): message is TextMessage {
+    return message instanceof TextMessage;
+  }
     
-    isImageMessage(message: Message): message is ImageMessage {
-        return message instanceof ImageMessage;
-    }
+  isImageMessage(message: Message): message is ImageMessage {
+    return message instanceof ImageMessage;
+  }
 }
