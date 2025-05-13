@@ -1,0 +1,7 @@
+<div
+  class="message-container"
+  [ngClass]="{ 'from-anna': isFromAnna, 'from-others': !isFromAnna }"
+>
+  <img class="profile-pic" [src]="message.profilePictureUrl" alt="Profile" />
+  <div class="text-bubble">{{ message.content }}</div>
+</div>

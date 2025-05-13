@@ -1,0 +1,31 @@
+$fruit-name: #3f51b5;
+
+.dialog-container {
+  width: 400px;
+  padding: 1rem;
+}
+
+.fruit-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $fruit-name;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+
+  h3 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  p, mat-list-item {
+    font-size: 0.95rem;
+    max-height: 32px;
+  }
+}
+
+.mat-mdc-list {
+  padding: 0;
+}

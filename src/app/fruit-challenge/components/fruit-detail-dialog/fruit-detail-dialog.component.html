@@ -1,0 +1,30 @@
+<mat-card class="dialog-container">
+  <mat-card-header>
+    <mat-card-title class="fruit-name">{{ data.name }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <section class="section">
+      <h3>General Info</h3>
+      <p><strong>ID:</strong> {{ data.id }}</p>
+      <p><strong>Genus:</strong> {{ data.genus }}</p>
+      <p><strong>Family:</strong> {{ data.family }}</p>
+      <p><strong>Order:</strong> {{ data.order }}</p>
+    </section>
+
+    <section class="section">
+      <h3>Nutrition</h3>
+      <mat-list>
+        <mat-list-item><strong>Carbohydrates:</strong> {{ data.nutritions.carbohydrates }}</mat-list-item>
+        <mat-list-item><strong>Protein:</strong> {{ data.nutritions.protein }}</mat-list-item>
+        <mat-list-item><strong>Fat:</strong> {{ data.nutritions.fat }}</mat-list-item>
+        <mat-list-item><strong>Calories:</strong> {{ data.nutritions.calories }}</mat-list-item>
+        <mat-list-item><strong>Sugar:</strong> {{ data.nutritions.sugar }}</mat-list-item>
+      </mat-list>
+    </section>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-stroked-button color="primary" (click)="close()">Close</button>
+  </mat-card-actions>
+</mat-card>

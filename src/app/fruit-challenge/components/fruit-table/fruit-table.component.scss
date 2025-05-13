@@ -1,3 +1,8 @@
+$color-row-odd: #FFFFFF;
+$color-row-even: #FAFAFA;
+$color-highlight-row: #31BF5D;
+$color-hover-row: #e0e0e0;
+
 .container {
   min-height: 100%;
   min-width: 100%;
@@ -8,4 +13,39 @@
   display: flex;
   width: 100%;
   justify-content: center;
+}
+
+.filter-container {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.filter {
+  flex: 1;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.highlight-row {
+  background-color: $color-highlight-row;
+}
+
+::ng-deep .mat-row:nth-child(odd) {
+  background-color: $color-row-odd;
+}
+
+::ng-deep .mat-row:nth-child(even) {
+  background-color: $color-row-even;
+}
+
+::ng-deep .mat-mdc-row:hover {
+  background-color: $color-hover-row;
+  cursor: pointer !important;
 }
